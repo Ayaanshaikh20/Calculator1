@@ -5,11 +5,14 @@ let string = '';
 let arr = Array.from(buttons1);
 arr.forEach(button => {
     button.addEventListener('click', function(e){
-        e.preventDefault();
-        if(e.target.innerHTML == '='){
+        if(e.target.innerHTML == '=' && input.value ==0){
+            input.value = 0;
+        }
+        else if(e.target.innerHTML == '='){
             string = eval(string);
             input.value = string;
-        }else if(e.target.innerHTML == 'AC'){
+        }
+        else if(e.target.innerHTML == 'AC'){
             string = '';
             input.value = string;
         }else if(e.target.innerHTML == 'DE' && input.value >= 0){
@@ -22,7 +25,7 @@ arr.forEach(button => {
             input.value = string
         }
         
-        
     })
 })
+
 
